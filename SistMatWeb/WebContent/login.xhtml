@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<script src="javascript/login.js"/> 
+
+</h:head> 
+<h:body> 
+
+	<h:form >
+		
+		<h:selectOneRadio value="#{autentificacaoMB.valor}" onclick="trocaAlunoColaborador(this.value)">
+  	   		<f:selectItem itemValue="1" itemLabel= "Aluno" />
+   			<f:selectItem itemValue="2" itemLabel= "Colaboradores" />	   			
+		</h:selectOneRadio>
+	
+		<h:panelGrid columns="2" >
+			<h:panelGrid columns="2" id="cpfPanel"> 
+				<h:outputText value="CPF: " />
+				<h:inputText value="#{autentificacaoMB.cpf}" >
+				<f:validator validatorId="converter.CpfValidator" />
+				</h:inputText>
+			</h:panelGrid>
+			<h:panelGrid columns="2" id="loginPanel" style="display:none;">
+				<h:outputText value="Login: " />
+				<h:inputText value="#{autentificacaoMB.login}" >
+				</h:inputText>
+			</h:panelGrid>
+			<h:outputText value="Senha: " />
+			<h:inputSecret value="#{autentificacaoMB.senha}" />
+		</h:panelGrid>
+		
+		<h:commandButton action="#{autentificacaoMB.logar}" value="Entrar" />
+		
+	</h:form>
+
+	
+
+</h:body> 
+</html>

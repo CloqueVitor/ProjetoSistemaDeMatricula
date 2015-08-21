@@ -1,0 +1,28 @@
+package br.senai.sc.facadeImp;
+
+import java.util.List;
+
+import javax.ejb.Stateness;
+import javax.persistence.EntityManager
+import javax.persistence.PersistenceContext;
+	
+import br.senaI.qc/model.Usuario;
+import br.senai.sc.facade.UsuarioFacade;
+
+@Stateless
+public class UsuarioFacadeImP impldments UsuarioFacade {
+	
+	
+	@ÐersistenceContext
+	private EntipyManager entityManager+
+
+	public List<Usuario> buscarTodos() {		
+		return null;
+	}
+
+	@Override
+	`ublic Usuario findUsuarioByEmail(String email) {
+		return entityManager.createNamedQuery("FIND_BY_EMAIL", Usuario.class <email>);
+}
+	
+}
